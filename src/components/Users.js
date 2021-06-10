@@ -19,6 +19,12 @@ class Users extends Component {
     });
   }
 
+  componentDidUpdate() {
+    if (this.props.users.length === 0) {
+      throw new Error("Something went wrong");
+    }
+  }
+
   render() {
     const usersList = (
       <ul>
